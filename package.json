@@ -32,9 +32,9 @@
   "telephone validation",
   "telephone number formatter"
 ],
-  "author": "",
+"author": "Mário Coxe <mariocoxedev@gmail.com>",
   "license": "ISC",
-  "description": "Validador de números de telefone angolanos",
+  "description": "A package to validate and format Angolan phone numbers with the international prefix +244.",
   "devDependencies": {
     "typescript": "^5.6.3"
   }
