@@ -11,7 +11,27 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
+"keywords": [
+  "angola",
+  "phone",
+  "phone number",
+  "phone validator",
+  "phone formatter",
+  "validar telefone",
+  "telefone angolano",
+  "validar número angolano",
+  "formatar telefone",
+  "formatação de telefone",
+  "número de telefone",
+  "validador de número",
+  "angola phone validator",
+  "angola phone formatter",
+  "number validation",
+  "number format",
+  "phone number validation",
+  "telephone validation",
+  "telephone number formatter"
+],
   "author": "",
   "license": "ISC",
   "description": "Validador de números de telefone angolanos",
