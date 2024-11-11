@@ -8,31 +8,39 @@
     "build": "tsc",
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mario-Coxe/validador-numero-angola.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mario-Coxe/validador-numero-angola/issues"
+  },
+  "homepage": "https://github.com/Mario-Coxe/validador-numero-angola#readme",
   "files": [
     "dist"
   ],
-"keywords": [
-  "angola",
-  "phone",
-  "phone number",
-  "phone validator",
-  "phone formatter",
-  "validar telefone",
-  "telefone angolano",
-  "validar número angolano",
-  "formatar telefone",
-  "formatação de telefone",
-  "número de telefone",
-  "validador de número",
-  "angola phone validator",
-  "angola phone formatter",
-  "number validation",
-  "number format",
-  "phone number validation",
-  "telephone validation",
-  "telephone number formatter"
-],
-"author": "Mário Coxe <mariocoxedev@gmail.com>",
+  "keywords": [
+    "angola",
+    "phone",
+    "phone number",
+    "phone validator",
+    "phone formatter",
+    "validar telefone",
+    "telefone angolano",
+    "validar número angolano",
+    "formatar telefone",
+    "formatação de telefone",
+    "número de telefone",
+    "validador de número",
+    "angola phone validator",
+    "angola phone formatter",
+    "number validation",
+    "number format",
+    "phone number validation",
+    "telephone validation",
+    "telephone number formatter"
+  ],
+  "author": "Mário Coxe <mariocoxedev@gmail.com>",
   "license": "ISC",
   "description": "A package to validate and format Angolan phone numbers with the international prefix +244.",
   "devDependencies": {
