@@ -1,0 +1,21 @@
+{
+  "name": "validador-numero-angola",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Validador de números de telefone angolanos",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
