@@ -1,6 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var validador_numero_angola_1 = require("validador-numero-angola");
-var numero = "+244 995047526";
-console.log((0, validador_numero_angola_1.isAngolaPhoneValid)(numero));
-console.log((0, validador_numero_angola_1.formatAngolaPhone)(numero));
+const { isAngolaPhoneValid, formatAngolaPhone } = require("./dist/index");
+
+const numeroTelefone = "+244 919999999";
+console.log(isAngolaPhoneValid(numeroTelefone));
+console.log(formatAngolaPhone(numeroTelefone));

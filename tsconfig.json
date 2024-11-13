@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
-    // Other compiler options...
     "typeRoots": ["./node_modules/@types", "./types"],
-    "outDir": "./dist",    
+    "outDir": "./dist",
+    
+    
+    "target": "ES2016",
+    "lib": ["ES2016", "DOM"],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true
     
   },
   "include": [
