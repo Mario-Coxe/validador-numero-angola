@@ -2,17 +2,17 @@
   "compilerOptions": {
     "typeRoots": ["./node_modules/@types", "./types"],
     "outDir": "./dist",
-    
-    
     "target": "ES2016",
-    "lib": ["ES2016", "DOM"],
+    "lib": ["es2017", "DOM"],
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictNullChecks": true,
-    "skipLibCheck": true
-    
+    "skipLibCheck": true,
+    "rootDir": "./src",  
+    "declaration": true,             // Habilita a geração de arquivos .d.ts
+    "declarationDir": "./dist",      
   },
   "include": [
     "src/**/*.ts"

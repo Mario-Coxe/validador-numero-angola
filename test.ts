@@ -1,7 +1,11 @@
-import { isAngolaPhoneValid, formatAngolaPhone } from "validador-numero-angola";
+import {
+  isAngolaPhoneValid,
+  formatAngolaPhone,
+  getOperator,
+} from "validador-numero-angola";
 
-// Número de telefone para testar
-const numeroTelefone = "";
+const numeroTelefone = "123456789";
 
-console.log(isAngolaPhoneValid(numeroTelefone)); // true ou false
-console.log(formatAngolaPhone(numeroTelefone));  // "919999999"
+console.log(isAngolaPhoneValid(numeroTelefone));
+console.log(formatAngolaPhone(numeroTelefone));
+console.log(getOperator(numeroTelefone));

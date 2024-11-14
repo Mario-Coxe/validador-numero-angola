@@ -1,4 +1,4 @@
-import { AngolaPhoneValidator } from "./validators/angola-phone-validator";
+import { AngolaPhoneValidator } from "./lib/angola-phone";
 const validator = new AngolaPhoneValidator();
 
 export function isAngolaPhoneValid(phoneNumber: string): boolean {
@@ -7,4 +7,8 @@ export function isAngolaPhoneValid(phoneNumber: string): boolean {
 
 export function formatAngolaPhone(phoneNumber: string): string {
   return validator.format(phoneNumber);
+}
+
+export function getOperator(phoneNumber: string): string | null {
+  return validator.operator(phoneNumber);
 }
