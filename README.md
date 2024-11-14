@@ -59,15 +59,39 @@ Identifica a operadora do número de telefone com base no prefixo. A função re
 - **Entrada**: Uma string contendo o número de telefone.
 - **Saída**: O nome da operadora (por exemplo, "Movicel", "Unitel", "Africell"), ou `null` se o número não for válido ou não puder ser identificado.
 
-### Exemplo de Formatação de Número e Identificação da Operadora
+## Exemplo de Formatação de Número e Identificação da Operadora
+
+### Número Válido
 
 ```typescript
-const numeroTelefone = "+244 995047526";
+import { isAngolaPhoneValid, formatAngolaPhone, getOperator } from "validador-numero-angola";
+
+// Número de telefone válido
+const numeroTelefone = "+244 955047526";
 
 console.log(isAngolaPhoneValid(numeroTelefone)); // true
-console.log(formatAngolaPhone(numeroTelefone));  // "995047526"
+console.log(formatAngolaPhone(numeroTelefone));  // "955047526"
 console.log(getOperator(numeroTelefone)); // "Africell"
 ```
+
+### Número Inválido
+
+```typescript
+import { isAngolaPhoneValid, formatAngolaPhone, getOperator } from "validador-numero-angola";
+
+// Número de telefone inválido
+const numeroTelefone = "+244 95504752"; // Número com 8 dígitos, que é inválido
+
+console.log(isAngolaPhoneValid(numeroTelefone)); // false
+console.log(formatAngolaPhone(numeroTelefone));  // "+244 95504752" (não é alterado)
+console.log(getOperator(numeroTelefone)); // null (não é identificado)
+```
+
+### Explicação:
+
+- O **número válido** "+244 955047526" será validado como `true`, formatado corretamente para "955047526" e identificado como **Africell**.
+- O **número inválido** "+244 95504752" (com 8 dígitos) falha na validação e retorna `false`. A formatação não é alterada, e a operadora não é identificada (`null`).
+
 
 ## Contribuição
 

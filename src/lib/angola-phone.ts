@@ -12,8 +12,8 @@ export class AngolaPhoneValidator {
    * @returns boolean - Verdadeiro se o número for válido.
    */
   isValid(phoneNumber: string): boolean {
-    const cleanNumber = phoneNumber.trim().replace(/^(\+244|244)/, "");
-    return /^9\d{8}$/.test(cleanNumber);
+    const validPattern = /^(\+244\s?\d{9}|244\s?\d{9}|9\s?\d{8})$/;
+    return validPattern.test(phoneNumber.trim());
   }
 
   /**
@@ -40,13 +40,13 @@ export class AngolaPhoneValidator {
    * @returns string - Nome da operadora ou null se não identificada ou inválida.
    */
   operator(phoneNumber: string): string | null {
-    const cleanNumber = phoneNumber.trim();
-
+    const cleanNumber = phoneNumber.trim().replace(/\s+/g, "");
     if (!this.isValid(cleanNumber)) {
       return null;
     }
 
     let operatorPrefix = "";
+
     if (cleanNumber.startsWith("+244")) {
       operatorPrefix = cleanNumber.slice(4, 6);
     } else if (cleanNumber.startsWith("244")) {
@@ -54,12 +54,12 @@ export class AngolaPhoneValidator {
     } else {
       operatorPrefix = cleanNumber.slice(0, 2);
     }
-
     for (const [operator, prefixes] of Object.entries(this.operators)) {
       if (prefixes.includes(operatorPrefix)) {
         return operator;
       }
     }
+
     return null;
   }
 }

@@ -4,8 +4,9 @@ import {
   getOperator,
 } from "validador-numero-angola";
 
-const numeroTelefone = "123456789";
+// Número de telefone para testar
+const numeroTelefone = "+244 919999999";
 
-console.log(isAngolaPhoneValid(numeroTelefone));
-console.log(formatAngolaPhone(numeroTelefone));
-console.log(getOperator(numeroTelefone));
+console.log(isAngolaPhoneValid(numeroTelefone)); // true
+console.log(formatAngolaPhone(numeroTelefone)); // "919999999"
+console.log(getOperator(numeroTelefone)); // "Movicel"
