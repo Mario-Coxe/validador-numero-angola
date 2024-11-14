@@ -1,21 +1,21 @@
-
 # Validador e Formatador de Números de Telefone de Angola
 
-Uma utilitária simples para validar e formatar números de telefone em Angola. Esta biblioteca garante que os números de telefone sejam formatados corretamente, tenha ou não o prefixo do país (`+244`). Ela também valida se o número de telefone segue o formato esperado para números angolanos.
+**Validador e Formatador de Números de Telefone de Angola** é uma biblioteca simples e eficiente para validar e formatar números de telefone de acordo com as regras de numeração de Angola. Ela lida com números com ou sem o prefixo do país (`+244`), garantindo que os números estejam no formato correto e atendam às especificações locais. A biblioteca também identifica a operadora associada ao número.
 
 ## Funcionalidades
 
-- **Validação de Número de Telefone**: Verifica se um número de telefone é válido com base no sistema de numeração de Angola.
-- **Formatação de Número de Telefone**: Formata números de telefone, removendo o prefixo `+244`, caso exista.
-- **Tratamento de Entrada Flexível**: Trata números com ou sem o código do país (`+244`) e remove espaços desnecessários.
+- **Validação de Número de Telefone**: Verifica se o número de telefone segue o formato correto de numeração de Angola.
+- **Formatação de Número de Telefone**: Remove o prefixo `+244` do número, se presente, e formata o número para o padrão local.
+- **Identificação da Operadora**: Identifica a operadora (Movicel, Unitel, Africell, etc.) com base no prefixo do número de telefone.
+- **Entrada Flexível**: Suporta números com ou sem o código de país (`+244`) e elimina espaços extras.
 - **Regras de Validação**:
-  - Números válidos devem começar com `+244` ou apenas com `9` (com 9 dígitos).
-  - Se o número começar com `9`, não pode conter `90` como o segundo dígito.
-  - Se o número começar com `+244`, deve ter exatamente 13 dígitos (incluindo o `+244`).
+  - O número de telefone deve começar com `+244` ou com o dígito `9` (com 9 dígitos).
+  - Se o número começar com `9`, não pode ter `90` como o segundo dígito.
+  - Se começar com `+244`, o número deve ter exatamente 13 dígitos (incluindo o código do país).
 
 ## Instalação
 
-Para instalar a biblioteca, execute o seguinte comando:
+Para instalar a biblioteca em seu projeto, execute o seguinte comando:
 
 ```bash
 npm install validador-numero-angola
@@ -26,47 +26,60 @@ npm install validador-numero-angola
 ### Exemplo
 
 ```typescript
-import { isAngolaPhoneValid, formatAngolaPhone } from "validador-numero-angola";
+import { isAngolaPhoneValid, formatAngolaPhone, operator } from "validador-numero-angola";
 
 // Número de telefone para testar
 const numeroTelefone = "+244 919999999";
 
 console.log(isAngolaPhoneValid(numeroTelefone)); // true ou false
 console.log(formatAngolaPhone(numeroTelefone));  // "919999999"
+console.log(operator(numeroTelefone)); // "Movicel"
 ```
 
 ### Funções
 
 #### `isAngolaPhoneValid(phoneNumber: string): boolean`
 
-Valida se o número de telefone fornecido é válido de acordo com as regras angolanas.
+Valida se o número de telefone fornecido é válido conforme as regras de numeração de Angola.
 
 - **Entrada**: Uma string contendo o número de telefone (com ou sem espaços).
-- **Saída**: `true` se o número for válido, `false` caso contrário.
+- **Saída**: Retorna `true` se o número for válido, `false` caso contrário.
 
 #### `formatAngolaPhone(phoneNumber: string): string`
 
-Formata o número de telefone removendo o prefixo `+244` se for válido. Caso o número não tenha o prefixo `+244`, ele retorna o número como está.
+Formata o número de telefone removendo o prefixo `+244` (caso presente). A formatação só ocorrerá se o número for validado como correto, garantindo que números inválidos não sejam alterados.
 
 - **Entrada**: Uma string contendo o número de telefone.
-- **Saída**: Uma string representando o número de telefone formatado, ou o número original se não for válido.
+- **Saída**: Retorna uma string com o número formatado (sem o prefixo `+244`), ou o número original se não for válido.
 
-### Exemplo de Formatação de Número
+#### `operator(phoneNumber: string): string | null`
+
+Identifica a operadora do número de telefone com base no prefixo. A função retorna o nome da operadora (Movicel, Unitel, Africell, etc.) ou `null` se o número for inválido.
+
+- **Entrada**: Uma string contendo o número de telefone.
+- **Saída**: O nome da operadora (por exemplo, "Movicel", "Unitel", "Africell"), ou `null` se o número não for válido ou não puder ser identificado.
+
+### Exemplo de Formatação de Número e Identificação da Operadora
 
 ```typescript
 const numeroTelefone = "+244 995047526";
 
 console.log(isAngolaPhoneValid(numeroTelefone)); // true
 console.log(formatAngolaPhone(numeroTelefone));  // "995047526"
+console.log(operator(numeroTelefone)); // "Africell"
 ```
 
 ## Contribuição
 
-Se você deseja contribuir para este projeto, sinta-se à vontade para fazer um fork do repositório e enviar um pull request.
+Este projeto é de código aberto e está aberto à contribuição da comunidade. Se você deseja contribuir, por favor:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua alteração (`git checkout -b feature-nome-da-feature`).
+3. Realize as modificações e adicione testes (se aplicável).
+4. Envie um pull request para revisão.
+
+Certifique-se de seguir as convenções de codificação e de incluir testes adequados para garantir a qualidade do código.
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-
-Este `README` fornece uma visão geral do projeto, instruções de instalação, exemplos de uso, e explicações detalhadas das funções `isAngolaPhoneValid` e `formatAngolaPhone`. Você pode atualizá-lo conforme necessário com base nas alterações e novas funcionalidades que você implementar.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
