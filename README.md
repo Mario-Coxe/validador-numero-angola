@@ -6,7 +6,7 @@
 
 - **Validação de Número de Telefone**: Verifica se o número de telefone segue o formato correto de numeração de Angola.
 - **Formatação de Número de Telefone**: Remove o prefixo `+244` do número, se presente, e formata o número para o padrão local.
-- **Identificação da Operadora**: Identifica a operadora (Movicel, Unitel, Africell, etc.) com base no prefixo do número de telefone.
+- **Identificação da Operadora**: Identifica a operadora (Movicel, Unitel, Africell) com base no prefixo do número de telefone.
 - **Entrada Flexível**: Suporta números com ou sem o código de país (`+244`) e elimina espaços extras.
 - **Regras de Validação**:
   - O número de telefone deve começar com `+244` ou com o dígito `9` (com 9 dígitos).
