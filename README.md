@@ -26,14 +26,14 @@ npm install validador-numero-angola
 ### Exemplo
 
 ```typescript
-import { isAngolaPhoneValid, formatAngolaPhone, operator } from "validador-numero-angola";
+import { isAngolaPhoneValid, formatAngolaPhone, getOperator } from "validador-numero-angola";
 
 // Número de telefone para testar
 const numeroTelefone = "+244 919999999";
 
 console.log(isAngolaPhoneValid(numeroTelefone)); // true ou false
 console.log(formatAngolaPhone(numeroTelefone));  // "919999999"
-console.log(operator(numeroTelefone)); // "Movicel"
+console.log(getOperator(numeroTelefone)); // "Movicel"
 ```
 
 ### Funções
@@ -52,7 +52,7 @@ Formata o número de telefone removendo o prefixo `+244` (caso presente). A form
 - **Entrada**: Uma string contendo o número de telefone.
 - **Saída**: Retorna uma string com o número formatado (sem o prefixo `+244`), ou o número original se não for válido.
 
-#### `operator(phoneNumber: string): string | null`
+#### `getOperator(phoneNumber: string): string | null`
 
 Identifica a operadora do número de telefone com base no prefixo. A função retorna o nome da operadora (Movicel, Unitel, Africell, etc.) ou `null` se o número for inválido.
 
@@ -66,7 +66,7 @@ const numeroTelefone = "+244 995047526";
 
 console.log(isAngolaPhoneValid(numeroTelefone)); // true
 console.log(formatAngolaPhone(numeroTelefone));  // "995047526"
-console.log(operator(numeroTelefone)); // "Africell"
+console.log(getOperator(numeroTelefone)); // "Africell"
 ```
 
 ## Contribuição
@@ -77,7 +77,10 @@ Este projeto é de código aberto e está aberto à contribuição da comunidade
 2. Crie uma branch para sua alteração (`git checkout -b feature-nome-da-feature`).
 3. Envie um pull request para revisão.
 
-Certifique-se de seguir as convenções de codificação e de incluir testes adequados para garantir a qualidade do código.
+## Links Úteis
+
+- [npm package](https://www.npmjs.com/package/validador-numero-angola)
+- [GitHub Repository](https://github.com/Mario-Coxe/validador-numero-angola)
 
 ## Licença
 
