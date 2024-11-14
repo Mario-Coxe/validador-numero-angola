@@ -75,8 +75,7 @@ Este projeto é de código aberto e está aberto à contribuição da comunidade
 
 1. Faça um fork do repositório.
 2. Crie uma branch para sua alteração (`git checkout -b feature-nome-da-feature`).
-3. Realize as modificações e adicione testes (se aplicável).
-4. Envie um pull request para revisão.
+3. Envie um pull request para revisão.
 
 Certifique-se de seguir as convenções de codificação e de incluir testes adequados para garantir a qualidade do código.
 
